@@ -19,7 +19,17 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button1.FlatStyle = FlatStyle.Popup;
+            
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
