@@ -29,10 +29,21 @@ namespace Mario.M.A.D.inf.OOP.Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Level1));
+            this.SuspendLayout();
+            // 
+            // Level1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.DoubleBuffered = true;
+            this.Name = "Level1";
             this.Text = "Form2";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
