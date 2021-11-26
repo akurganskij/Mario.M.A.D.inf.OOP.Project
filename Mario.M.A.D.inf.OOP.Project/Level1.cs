@@ -10,9 +10,46 @@ namespace Mario.M.A.D.inf.OOP.Project
 {
     public partial class Level1 : Form
     {
-        public Level1()
+        bool jumped = false;
+        Form levelsform = new Form();
+        public Level1(Form frm)
         {
             InitializeComponent();
+            levelsform = frm;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Level1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.D) || e.KeyChar == 'd')
+            {
+                pictureBox2.Left += 5;
+            }
+            if (! jumped &&(e.KeyChar == 'W' || e.KeyChar == 'w'))
+            {
+                jumped = true;
+                pictureBox2.Top -= 75;
+                timer1.Enabled = true;
+            }
+            if (e.KeyChar == 'A' || e.KeyChar == 'a')
+            {
+                pictureBox2.Left -= 5;
+            }
+        }
+
+        private void Level1_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            jumped = false;
+            pictureBox2.Top += 75;
+            timer1.Enabled = false;
         }
     }
 }

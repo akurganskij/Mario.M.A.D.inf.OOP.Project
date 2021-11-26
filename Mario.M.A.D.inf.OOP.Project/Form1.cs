@@ -30,5 +30,12 @@ namespace Mario.M.A.D.inf.OOP.Project
         {
             Application.Exit();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Levels levels = new Levels(this);
+            levels.Show();
+            this.Hide();
+        }
     }
 }
