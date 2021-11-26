@@ -17,10 +17,10 @@ namespace Mario.M.A.D.inf.OOP.Project
             InitializeComponent();
             levelsform = frm;
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
+        
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            pictureBox3.Location = new Point(10, 50);
         }
 
         private void Level1_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,6 +50,26 @@ namespace Mario.M.A.D.inf.OOP.Project
             jumped = false;
             pictureBox2.Top += 75;
             timer1.Enabled = false;
+        }
+
+        private void Level1_Load(object sender, EventArgs e)
+        {
+            pictureBox3.Location = new Point(50, 150);
+            pictureBox4.Location = new Point(350, 800);
+            pictureBox5.Location = new Point(550, 700);
+            pictureBox6.Location = new Point(1650, 700);
+            pictureBox7.Location = new Point(1500, 800);
+            pictureBox8.Location = new Point(200, 250);
+            pictureBox9.Location = new Point(850, 700);
+            pictureBox10.Location = new Point(1450, 600);
+            pictureBox11.Location = new Point(1300, 475);
+            pictureBox12.Location = new Point(1150, 350);
+            pictureBox13.Location = new Point(800, 230);
+            pictureBox14.Location = new Point(600, 350);
+            pictureBox15.Location = new Point(400, 250);
+            pictureBox16.Location = new Point(50, 500);
+            pictureBox17.Location = new Point(400, 450);
+
         }
     }
 }
