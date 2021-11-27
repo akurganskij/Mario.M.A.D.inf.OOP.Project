@@ -12,22 +12,25 @@ namespace Mario.M.A.D.inf.OOP.Project
     {
         bool jumped = false;
         Form levelsform = new Form();
+        PlayerMoving playerMoving;
+        PictureBox[] coordinates;
         public Level1(Form frm)
         {
             InitializeComponent();
             levelsform = frm;
+            coordinates = new PictureBox[1] { pictureBox3 };
+            playerMoving = new PlayerMoving(pictureBox2, timer1, 5, 75, coordinates);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void Level1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.D) || e.KeyChar == 'd')
             {
-                pictureBox2.Left += 5;
+                playerMoving.GoRight();
             }
             if (! jumped &&(e.KeyChar == 'W' || e.KeyChar == 'w'))
             {
@@ -37,7 +40,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             }
             if (e.KeyChar == 'A' || e.KeyChar == 'a')
             {
-                pictureBox2.Left -= 5;
+                playerMoving.GoLeft();
             }
         }
 

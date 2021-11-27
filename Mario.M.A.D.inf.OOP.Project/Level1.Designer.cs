@@ -73,7 +73,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(88, 304);
+            this.pictureBox3.Location = new System.Drawing.Point(90, 305);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(105, 46);
             this.pictureBox3.TabIndex = 2;
