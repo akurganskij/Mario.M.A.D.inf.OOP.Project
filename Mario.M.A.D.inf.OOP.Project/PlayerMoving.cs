@@ -7,59 +7,139 @@ namespace Mario.M.A.D.inf.OOP.Project
 {
     class PlayerMoving
     {
-        private PictureBox hero;
+        private PictureBox hero, ground;
         private Timer timer;
         private int step, jumpheight;
         private PictureBox[] coordinates;
         private int posLeft, posTop, height, width;
-        public PlayerMoving(PictureBox hero, Timer timer, int step, int jumpheight, PictureBox[] coordinates)
+        private bool jumped = false;
+        public PlayerMoving(PictureBox hero, Timer timer, int step, int jumpheight, PictureBox[] coordinates, PictureBox ground)
         {
             this.hero = hero;
             this.timer = timer;
             this.step = step;
             this.jumpheight = jumpheight;
             this.coordinates = coordinates;
+            this.ground = ground;
             posLeft = hero.Left;
             posTop = hero.Top;
             height = hero.Height;
             width = hero.Width;
+            timer.Tick += Timer_Tick;
         }
         public void GoRight()
         {
-            if((findLeft(posLeft + width + step).Left > posLeft + width + step) || (findLeft(posLeft + width + step).Top < posTop))
+            if ((findRight().Left > posLeft + width + step) || (findRight().Top < posTop))
             {
                 hero.Left += step;
                 posLeft += step;
+
+                if (timer.Enabled == false)
+                {
+                    timer.Interval = 200;
+                    timer.Enabled = true;
+                }
             }
         }
         public void GoLeft()
         {
-            if ((posLeft - step > 0)&&((findRight(posLeft + width + step).Left < posLeft + width + step) || (findRight(posLeft + width).Top < posTop)))
+            if (hero.Left - step > 0)
             {
-                hero.Left -= step;
-                posLeft -= step;
+                if ((findLeft().Right < posLeft - step) || (findLeft().Top < posTop))
+                {
+                    hero.Left -= step;
+                    posLeft -= step;
+                    if (timer.Enabled == false)
+                    {
+                        timer.Interval = 200;
+                        timer.Enabled = true;
+                    }
+                }
             }
         }
         public void GoUp()
         {
 
+            PictureBox b = findUp();
+            if (!jumped)
+            {
+                timer.Interval = 2000;
+                jumped = true;
+                if ((b.Location == new System.Drawing.Point(-1, -1) || b.Bottom < hero.Top - jumpheight))
+                {
+                    hero.Top -= jumpheight;
+                    timer.Enabled = true;
+                }
+                else
+                {
+                    hero.Top = b.Bottom;
+                    timer.Enabled = true;
+                }
+            }
         }
-        private PictureBox findLeft(int x, int w = 0)
+
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            PictureBox pBox = new PictureBox();
-            pBox.Location = new System.Drawing.Point(-1, -1);
-            foreach (PictureBox p in coordinates) 
-                if (p.Left + w <= x && p.Right >= x) 
-                    pBox = p;
-            return pBox;
+            GoDown();
+            jumped = false;
+            timer.Enabled = false;
         }
-        private PictureBox findRight(int x, int w = 0)
+
+        public void GoDown()
+        {
+
+            if (findDown().Location == new System.Drawing.Point(-1, -1))
+            {
+                hero.Top = ground.Top - jumpheight;
+            }
+            else
+            {
+                PictureBox b = findDown();
+                hero.Top = b.Top - jumpheight;
+            }
+        }
+        private PictureBox findRight()
         {
             PictureBox pBox = new PictureBox();
             pBox.Location = new System.Drawing.Point(-1, -1);
             foreach (PictureBox p in coordinates)
-                if (p.Right + w <= x && p.Left >= x)
+                if (p.Left < hero.Right + step && p.Right > hero.Left && p.Top < hero.Bottom && p.Bottom > hero.Top)
                     pBox = p;
+            return pBox;
+        }
+        private PictureBox findLeft()
+        {
+            PictureBox pBox = new PictureBox();
+            pBox.Location = new System.Drawing.Point(-1, -1);
+            foreach (PictureBox p in coordinates)
+                if (p.Left < hero.Right && p.Right > hero.Left - step && p.Top < hero.Bottom && p.Bottom > hero.Top)
+                    pBox = p;
+            return pBox;
+        }
+        private PictureBox findDown()
+        {
+            int min = 961;
+            PictureBox pBox = new PictureBox();
+            pBox.Location = new System.Drawing.Point(-1, -1);
+            foreach (PictureBox p in coordinates)
+                if (p.Top - hero.Bottom < min && hero.Bottom <= p.Top && p.Left < hero.Right && p.Right > hero.Left)
+                {
+                    pBox = p;
+                    min = p.Top - hero.Bottom;
+                }
+            return pBox;
+        }
+        private PictureBox findUp()
+        {
+            int min = 961;
+            PictureBox pBox = new PictureBox();
+            pBox.Location = new System.Drawing.Point(-1, -1);
+            foreach (PictureBox p in coordinates)
+                if (hero.Top - p.Bottom < min && hero.Top >= p.Bottom && p.Left < hero.Right && p.Right > hero.Left)
+                {
+                    pBox = p;
+                    min = hero.Top - p.Bottom;
+                }
             return pBox;
         }
     }
