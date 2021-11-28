@@ -19,7 +19,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             InitializeComponent();
             levelsform = frm;
             coordinates = new PictureBox[15] { pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17 };
-            playerMoving = new PlayerMoving(pictureBox2, timer1, 5, 150, coordinates, pictureBox1);
+            playerMoving = new PlayerMoving(pictureBox2, timer1, 5, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             pictureBox3.Location = new Point(50, 150);
             pictureBox4.Location = new Point(350, 800);
             pictureBox5.Location = new Point(550, 700);
-            pictureBox6.Location = new Point(1650, 700);
+            pictureBox6.Location = new Point(1700, 700);
             pictureBox7.Location = new Point(1500, 800);
             pictureBox8.Location = new Point(200, 250);
             pictureBox9.Location = new Point(850, 700);
@@ -66,6 +66,11 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -11,9 +11,10 @@ namespace Mario.M.A.D.inf.OOP.Project
         private Timer timer;
         private int step, jumpheight;
         private PictureBox[] coordinates;
-        private int posLeft, posTop, height, width;
+        private int posLeft, posTop, height, width, rightMax;
         private bool jumped = false;
-        public PlayerMoving(PictureBox hero, Timer timer, int step, int jumpheight, PictureBox[] coordinates, PictureBox ground)
+        private bool left = false, right = true;
+        public PlayerMoving(PictureBox hero, Timer timer, int step, int jumpheight, PictureBox[] coordinates, PictureBox ground, int rightMax)
         {
             this.hero = hero;
             this.timer = timer;
@@ -21,6 +22,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.jumpheight = jumpheight;
             this.coordinates = coordinates;
             this.ground = ground;
+            this.rightMax = rightMax;
             posLeft = hero.Left;
             posTop = hero.Top;
             height = hero.Height;
@@ -29,6 +31,13 @@ namespace Mario.M.A.D.inf.OOP.Project
         }
         public void GoRight()
         {
+            if (left)
+            {
+                hero.Image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipY);
+                right = true;
+                left = false;
+            }
+            if (! (hero.Right + step > rightMax))
             if ((findRight().Left > posLeft + width + step) || (findRight().Top < posTop))
             {
                 hero.Left += step;
@@ -43,6 +52,12 @@ namespace Mario.M.A.D.inf.OOP.Project
         }
         public void GoLeft()
         {
+            if (right)
+            {
+                hero.Image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipY);
+                right = false;
+                left = true;
+            }
             if (hero.Left - step > 0)
             {
                 if ((findLeft().Right < posLeft - step) || (findLeft().Top < posTop))
@@ -59,13 +74,18 @@ namespace Mario.M.A.D.inf.OOP.Project
         }
         public void GoUp()
         {
-
+            
             PictureBox b = findUp();
             if (!jumped)
             {
-                timer.Interval = 2000;
+                timer.Interval = 1500;
                 jumped = true;
-                if ((b.Location == new System.Drawing.Point(-1, -1) || b.Bottom < hero.Top - jumpheight))
+                if (hero.Top - jumpheight < 0)
+                {
+                    hero.Top = 0;
+                    timer.Enabled = true;
+                }
+                else if((b.Location == new System.Drawing.Point(-1, -1) || b.Bottom < hero.Top - jumpheight))
                 {
                     hero.Top -= jumpheight;
                     timer.Enabled = true;
