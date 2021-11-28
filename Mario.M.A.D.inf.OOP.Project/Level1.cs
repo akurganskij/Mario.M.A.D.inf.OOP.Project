@@ -19,7 +19,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             InitializeComponent();
             levelsform = frm;
             coordinates = new PictureBox[15] { pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17 };
-            playerMoving = new PlayerMoving(pictureBox2, timer1, 5, 150, coordinates, pictureBox1);
+            playerMoving = new PlayerMoving(pictureBox2, timer1, 5, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
