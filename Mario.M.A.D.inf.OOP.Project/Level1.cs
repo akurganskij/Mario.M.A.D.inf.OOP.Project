@@ -56,7 +56,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             pictureBox19.Location = new Point(920, 645);
             pictureBox20.Location = new Point(50, 445);
             pictureBox21.Location = new Point(1720, 645);
-
+            pictureBox22.Location = new Point(640, 615);
+            pictureBox23.Location = new Point(940, 145);
 
         }
         private void Level1_KeyDown(object sender, KeyEventArgs e)
@@ -85,6 +86,11 @@ namespace Mario.M.A.D.inf.OOP.Project
         }
 
         private void pictureBox18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Level1_Load_1(object sender, EventArgs e)
         {
 
         }
