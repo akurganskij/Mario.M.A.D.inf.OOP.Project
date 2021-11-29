@@ -13,36 +13,31 @@ namespace Mario.M.A.D.inf.OOP.Project
         bool jumped = false;
         Form levelsform = new Form();
         PlayerMoving playerMoving;
-        PictureBox[] coordinates;
+        PictureBox[] coordinates, coins;
         public Level1(Form frm)
         {
             InitializeComponent();
             levelsform = frm;
             coordinates = new PictureBox[15] { pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17 };
-            playerMoving = new PlayerMoving(pictureBox2, timer1, 5, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width);
+            coins = new PictureBox[3] { pictureBox19, pictureBox20, pictureBox21 };
+            playerMoving = new PlayerMoving(pictureBox2, timer1, 10, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width, pictureBox18, coins, complete);
         }
-
+        private void complete()
+        {
+            levelsform.Show();
+            this.Close();
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
         private void Level1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.D) || e.KeyChar == 'd')
-            {
-                playerMoving.GoRight();
-            }
-            if (! jumped &&(e.KeyChar == 'W' || e.KeyChar == 'w'))
-            {
-                playerMoving.GoUp();
-            }
-            if (e.KeyChar == 'A' || e.KeyChar == 'a')
-            {
-                playerMoving.GoLeft();
-            }
+            
         }
         private void Level1_Load(object sender, EventArgs e)
         {
+            button1.TabIndex = 3;
             pictureBox3.Location = new Point(50, 150);
             pictureBox4.Location = new Point(350, 800);
             pictureBox5.Location = new Point(550, 700);
@@ -67,6 +62,18 @@ namespace Mario.M.A.D.inf.OOP.Project
         }
         private void Level1_KeyDown(object sender, KeyEventArgs e)
         {
+            if(e.KeyData == Keys.Up || e.KeyCode == Keys.W)
+            {
+                playerMoving.GoUp();
+            }
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
+            {
+                playerMoving.GoLeft();
+            }
+            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
+            {
+                playerMoving.GoRight();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
