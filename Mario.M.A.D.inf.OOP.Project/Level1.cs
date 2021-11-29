@@ -10,7 +10,6 @@ namespace Mario.M.A.D.inf.OOP.Project
 {
     public partial class Level1 : Form
     {
-        bool jumped = false;
         Form levelsform = new Form();
         PlayerMoving playerMoving;
         PictureBox[] coordinates, coins;
