@@ -12,12 +12,13 @@ namespace Mario.M.A.D.inf.OOP.Project
         private int step, jumpheight;
         private PictureBox[] coordinates;
         private PictureBox[] coins;
+        private PictureBox[] monsters;
         private int posLeft, posTop, height, width, rightMax;
         private bool jumped = false;
         private bool left = false, right = true;
         private int coinsamount;
         private Action complete;
-        public PlayerMoving(PictureBox hero, Timer timer, int step, int jumpheight, PictureBox[] coordinates, PictureBox ground, int rightMax, PictureBox door, PictureBox[] coins, Action complete)
+        public PlayerMoving(PictureBox hero, Timer timer, int step, int jumpheight, PictureBox[] coordinates, PictureBox ground, int rightMax, PictureBox door, PictureBox[] coins, PictureBox[] monsters, Action complete)
         {
             this.hero = hero;
             this.timer = timer;
@@ -28,6 +29,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.rightMax = rightMax;
             this.door = door;
             this.coins = coins;
+            this.monsters = monsters;
             this.complete = complete;
             posLeft = hero.Left;
             posTop = hero.Top;
@@ -87,7 +89,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             PictureBox b = findUp();
             if (!jumped)
             {
-                timer.Interval = 1500;
+                timer.Interval = 1200;
                 jumped = true;
                 if (hero.Top - jumpheight < 0)
                 {
@@ -112,7 +114,10 @@ namespace Mario.M.A.D.inf.OOP.Project
                 }
             }
         }
-
+        public void Hit()
+        {
+            findMonster();
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             GoDown();
@@ -193,6 +198,17 @@ namespace Mario.M.A.D.inf.OOP.Project
             if(hero.Right > door.Left && hero.Left < door.Right && door.Top < hero.Bottom && door.Bottom > hero.Top)
             {
                 complete();
+            }
+        }
+        private void findMonster()
+        {
+            foreach (PictureBox i in monsters)
+            {
+                if (hero.Right > i.Left && hero.Left < i.Right && i.Top < hero.Bottom && i.Bottom > hero.Top && i.Visible)
+                {
+                    coinsamount += 1;
+                    i.Visible = false;
+                }
             }
         }
         public int getCoins()
