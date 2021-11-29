@@ -10,20 +10,12 @@ namespace Mario.M.A.D.inf.OOP.Project
 {
     public partial class Levels : Form
     {
+        int imagenum = 0;
         Form welcomeform = new Form();
-        Image[] levelImg = new Image[3];
         public Levels(Form frm)
         {
             InitializeComponent();
             welcomeform = frm;
-            try
-            {
-                levelImg[0] = Properties.Resources.Level1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,7 +27,7 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void Levels_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = levelImg[0];
+            
             pictureBox1.Width = 1280;
             pictureBox1.Height = 720;
         }
@@ -66,6 +58,32 @@ namespace Mario.M.A.D.inf.OOP.Project
             Level1 level3 = new Level1(this);
             level3.Show();
             this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            imagenum++;
+            imagenum %= 3;
+            switch(imagenum)
+            {
+                case 0: pictureBox1.Image = Properties.Resources.lvl1; break;
+                case 1: pictureBox1.Image = Properties.Resources.lvl2; break;
+                case 2: pictureBox1.Image = Properties.Resources.lvl3; break;
+            }
+            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            imagenum--;
+            if (imagenum < 0) imagenum = 3 + imagenum;
+            imagenum %= 3;
+            switch (imagenum)
+            {
+                case 0: pictureBox1.Image = Properties.Resources.lvl1; break;
+                case 1: pictureBox1.Image = Properties.Resources.lvl2; break;
+                case 2: pictureBox1.Image = Properties.Resources.lvl3; break;
+            }
         }
     }
 }

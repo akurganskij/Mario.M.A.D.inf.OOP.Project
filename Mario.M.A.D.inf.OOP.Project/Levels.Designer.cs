@@ -60,8 +60,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(345, 86);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::Mario.M.A.D.inf.OOP.Project.Properties.Resources.lvl1;
+            this.pictureBox1.Location = new System.Drawing.Point(260, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(708, 377);
             this.pictureBox1.TabIndex = 6;
@@ -75,15 +76,17 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.button2.TabIndex = 7;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1192, 263);
+            this.button3.Location = new System.Drawing.Point(55, 316);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 29);
             this.button3.TabIndex = 8;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // Levels
             // 
@@ -93,9 +96,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.ClientSize = new System.Drawing.Size(1325, 589);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Levels";
             this.Text = "Levels";
