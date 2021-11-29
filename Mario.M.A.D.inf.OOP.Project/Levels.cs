@@ -27,9 +27,9 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void Levels_Load(object sender, EventArgs e)
         {
+            button4.Location = new Point(80, 950);
+            button1.Location = new Point(1350, 950);
             
-            pictureBox1.Width = 1280;
-            pictureBox1.Height = 720;
         }
 
         private void button2_Click(object sender, EventArgs e)
