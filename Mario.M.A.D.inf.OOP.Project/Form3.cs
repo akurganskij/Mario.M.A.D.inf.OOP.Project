@@ -21,5 +21,12 @@ namespace Mario.M.A.D.inf.OOP.Project
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 level3 = new Form1();
+            level3.Show();
+            this.Hide();
+        }
     }
 }
