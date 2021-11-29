@@ -11,10 +11,21 @@ namespace Mario.M.A.D.inf.OOP.Project
     public partial class Form3 : Form
     {
         Form lastForm;
+        PlayerMoving playerMoving;
+        PictureBox[] coordinates, coins, monsters;
         public Form3(Form frm)
         {
             InitializeComponent();
             lastForm = frm;
+            coordinates = new PictureBox[11] { pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12};
+            coins = new PictureBox[3] { pictureBox13, pictureBox14, pictureBox15 };
+            monsters = new PictureBox[0] { };
+            playerMoving = new PlayerMoving(pictureBox17, timer1, 10, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width, pictureBox16, coins, monsters, complete);
+        }
+        private void complete()
+        {
+            lastForm.Show();
+            this.Close();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -34,7 +45,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             pictureBox14.Location = new Point(80, 530);
             pictureBox15.Location = new Point(720, 120);
             pictureBox16.Location = new Point(1700, 70);
-
+            pictureBox24.Location = new Point(1500, 5);
+            label1.Location = new Point(1560, 11);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,6 +54,30 @@ namespace Mario.M.A.D.inf.OOP.Project
             Form1 level3 = new Form1();
             level3.Show();
             this.Hide();
+        }
+
+        private void Form3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.W)
+            {
+                playerMoving.GoUp();
+                label1.Text = playerMoving.getCoins().ToString();
+            }
+            if (e.KeyCode == Keys.A)
+            {
+                playerMoving.GoLeft();
+                label1.Text = playerMoving.getCoins().ToString();
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                playerMoving.GoRight();
+                label1.Text = playerMoving.getCoins().ToString();
+            }
+            if (e.KeyCode == Keys.Space)
+            {
+                playerMoving.Hit();
+                label1.Text = playerMoving.getCoins().ToString();
+            }
         }
     }
 }

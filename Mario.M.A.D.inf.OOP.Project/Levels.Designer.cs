@@ -50,9 +50,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::Mario.M.A.D.inf.OOP.Project.Properties.Resources.lvl1;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 7);
+            this.pictureBox1.BackgroundImage = global::Mario.M.A.D.inf.OOP.Project.Properties.Resources.lvl11;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(73, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1480, 720);
             this.pictureBox1.TabIndex = 6;
@@ -85,8 +85,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(478, 56);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Exit";
+            this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // Levels
             // 

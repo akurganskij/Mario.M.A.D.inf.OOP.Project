@@ -60,17 +60,17 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void Level1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Up || e.KeyCode == Keys.W)
+            if(e.KeyCode == Keys.W)
             {
                 playerMoving.GoUp();
                 label1.Text = playerMoving.getCoins().ToString();
             }
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A)
             {
                 playerMoving.GoLeft();
                 label1.Text = playerMoving.getCoins().ToString();
             }
-            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D)
             {
                 playerMoving.GoRight();
                 label1.Text = playerMoving.getCoins().ToString();

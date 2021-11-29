@@ -29,7 +29,16 @@ namespace Mario.M.A.D.inf.OOP.Project
         {
             button4.Location = new Point(80, 950);
             button1.Location = new Point(1350, 950);
-            
+            pictureBox1.Width = 1580;
+            pictureBox1.Height = 840;
+            pictureBox1.Location = new Point(170, 50);
+            button3.Location = new Point(30, 50);
+            button3.Width = 120;
+            button3.Height = 840;
+            button2.Location = new Point(1770, 50);
+            button2.Width = 120;
+            button2.Height = 840;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,9 +75,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             imagenum %= 3;
             switch(imagenum)
             {
-                case 0: pictureBox1.Image = Properties.Resources.lvl1; break;
-                case 1: pictureBox1.Image = Properties.Resources.lvl2; break;
-                case 2: pictureBox1.Image = Properties.Resources.lvl3; break;
+                case 0: pictureBox1.BackgroundImage = Properties.Resources.lvl11; break;
+                case 1: pictureBox1.BackgroundImage = Properties.Resources.lvl21; break;
+                case 2: pictureBox1.BackgroundImage = Properties.Resources.lvl31; break;
             }
             
         }
@@ -80,9 +89,36 @@ namespace Mario.M.A.D.inf.OOP.Project
             imagenum %= 3;
             switch (imagenum)
             {
-                case 0: pictureBox1.Image = Properties.Resources.lvl1; break;
-                case 1: pictureBox1.Image = Properties.Resources.lvl2; break;
-                case 2: pictureBox1.Image = Properties.Resources.lvl3; break;
+                case 0: pictureBox1.BackgroundImage = Properties.Resources.lvl11; break;
+                case 1: pictureBox1.BackgroundImage = Properties.Resources.lvl21; break;
+                case 2: pictureBox1.BackgroundImage = Properties.Resources.lvl31; break;
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            switch (imagenum)
+            {
+                case 0: { 
+                        Level1 lvl1 = new Level1(this);
+                        lvl1.Show();
+                        this.Hide();
+                        break; 
+                    }
+                case 1:
+                    {
+                        Level2 lvl2 = new Level2(this);
+                        lvl2.Show();
+                        this.Hide();
+                        break;
+                    }
+                case 2:
+                    {
+                        Form3 lvl3 = new Form3(this);
+                        lvl3.Show();
+                        this.Hide();
+                        break;
+                    }
             }
         }
     }
