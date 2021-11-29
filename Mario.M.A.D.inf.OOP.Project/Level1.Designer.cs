@@ -56,6 +56,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -79,6 +81,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -108,7 +111,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            
             // 
             // pictureBox3
             // 
@@ -252,7 +255,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 14;
             this.pictureBox15.TabStop = false;
-            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
+            
             // 
             // pictureBox16
             // 
@@ -285,7 +288,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 17;
             this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
+            
             // 
             // pictureBox19
             // 
@@ -354,6 +357,29 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox23.TabIndex = 23;
             this.pictureBox23.TabStop = false;
             // 
+            // pictureBox24
+            // 
+            this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
+            this.pictureBox24.Location = new System.Drawing.Point(698, 264);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox24.TabIndex = 24;
+            this.pictureBox24.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(698, 208);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 34);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "0";
+            
+            // 
             // Level1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -361,6 +387,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(802, 540);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox24);
             this.Controls.Add(this.pictureBox23);
             this.Controls.Add(this.pictureBox22);
             this.Controls.Add(this.button1);
@@ -390,10 +418,10 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.Name = "Level1";
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Level1_Load_1);
+            
             this.LocationChanged += new System.EventHandler(this.Level1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level1_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Level1_KeyPress);
+            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -417,7 +445,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -448,5 +478,7 @@ namespace Mario.M.A.D.inf.OOP.Project
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.PictureBox pictureBox24;
+        private System.Windows.Forms.Label label1;
     }
 }

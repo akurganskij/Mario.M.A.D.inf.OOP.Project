@@ -206,7 +206,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             {
                 if (hero.Right > i.Left && hero.Left < i.Right && i.Top < hero.Bottom && i.Bottom > hero.Top && i.Visible)
                 {
-                    coinsamount += 1;
+                    coinsamount += 2;
                     i.Visible = false;
                 }
             }

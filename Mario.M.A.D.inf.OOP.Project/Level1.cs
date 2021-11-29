@@ -13,6 +13,7 @@ namespace Mario.M.A.D.inf.OOP.Project
         Form levelsform = new Form();
         PlayerMoving playerMoving;
         PictureBox[] coordinates, coins, monsters;
+
         public Level1(Form frm)
         {
             InitializeComponent();
@@ -22,19 +23,13 @@ namespace Mario.M.A.D.inf.OOP.Project
             monsters = new PictureBox[2] {pictureBox22, pictureBox23 };
             playerMoving = new PlayerMoving(pictureBox2, timer1, 10, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width, pictureBox18, coins, monsters, complete);
         }
+
         private void complete()
         {
             levelsform.Show();
             this.Close();
         }
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Level1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
+        
         private void Level1_Load(object sender, EventArgs e)
         {
             button1.TabIndex = 3;
@@ -59,45 +54,32 @@ namespace Mario.M.A.D.inf.OOP.Project
             pictureBox21.Location = new Point(1720, 645);
             pictureBox22.Location = new Point(640, 615);
             pictureBox23.Location = new Point(940, 145);
-
+            pictureBox24.Location = new Point(1500, 5);
+            label1.Location = new Point(1560, 11);
         }
+
         private void Level1_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyData == Keys.Up || e.KeyCode == Keys.W)
             {
                 playerMoving.GoUp();
+                label1.Text = playerMoving.getCoins().ToString();
             }
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 playerMoving.GoLeft();
+                label1.Text = playerMoving.getCoins().ToString();
             }
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 playerMoving.GoRight();
+                label1.Text = playerMoving.getCoins().ToString();
             }
             if (e.KeyCode == Keys.Space)
             {
                 playerMoving.Hit();
+                label1.Text = playerMoving.getCoins().ToString();
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Level1_Load_1(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
