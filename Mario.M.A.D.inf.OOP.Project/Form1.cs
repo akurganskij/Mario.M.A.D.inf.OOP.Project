@@ -19,6 +19,8 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button1.Location = new Point(750, 600);
+            button3.Location = new Point(750, 450);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)

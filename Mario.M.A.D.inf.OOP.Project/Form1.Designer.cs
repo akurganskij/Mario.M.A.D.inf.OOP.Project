@@ -38,13 +38,15 @@ namespace Mario.M.A.D.inf.OOP.Project
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.OliveDrab;
+            this.button1.Font = new System.Drawing.Font("Leelawadee UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(340, 235);
-            this.button1.MaximumSize = new System.Drawing.Size(200, 100);
+            this.button1.MaximumSize = new System.Drawing.Size(400, 200);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 31);
+            this.button1.Size = new System.Drawing.Size(400, 100);
             this.button1.TabIndex = 0;
             this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
@@ -69,13 +71,15 @@ namespace Mario.M.A.D.inf.OOP.Project
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(340, 198);
-            this.button3.MaximumSize = new System.Drawing.Size(200, 100);
+            this.button3.BackColor = System.Drawing.Color.OliveDrab;
+            this.button3.Font = new System.Drawing.Font("Leelawadee UI Semilight", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(340, 147);
+            this.button3.MaximumSize = new System.Drawing.Size(400, 200);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 31);
+            this.button3.Size = new System.Drawing.Size(400, 100);
             this.button3.TabIndex = 2;
             this.button3.Text = "Levels";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1

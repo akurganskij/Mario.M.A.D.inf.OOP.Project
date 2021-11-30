@@ -40,6 +40,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DarkKhaki;
+            this.button4.Font = new System.Drawing.Font("Leelawadee UI Semilight", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(73, 510);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(478, 56);
@@ -50,6 +51,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkKhaki;
             this.pictureBox1.BackgroundImage = global::Mario.M.A.D.inf.OOP.Project.Properties.Resources.lvl11;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(73, 3);
@@ -60,27 +62,33 @@ namespace Mario.M.A.D.inf.OOP.Project
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.button2.Font = new System.Drawing.Font("French Script MT", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(55, 263);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 29);
             this.button2.TabIndex = 7;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = ">";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("French Script MT", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(55, 316);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 29);
             this.button3.TabIndex = 8;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Text = "<";
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkKhaki;
+            this.button1.Font = new System.Drawing.Font("Leelawadee UI Semilight", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(783, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(478, 56);
