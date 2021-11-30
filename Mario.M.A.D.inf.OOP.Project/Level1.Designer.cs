@@ -111,7 +111,6 @@ namespace Mario.M.A.D.inf.OOP.Project
             // timer1
             // 
             this.timer1.Interval = 1000;
-            
             // 
             // pictureBox3
             // 
@@ -255,7 +254,6 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 14;
             this.pictureBox15.TabStop = false;
-            
             // 
             // pictureBox16
             // 
@@ -288,7 +286,6 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 17;
             this.pictureBox18.TabStop = false;
-            
             // 
             // pictureBox19
             // 
@@ -326,13 +323,18 @@ namespace Mario.M.A.D.inf.OOP.Project
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(676, -5);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Showcard Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(676, -3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 41);
             this.button1.TabIndex = 21;
             this.button1.TabStop = false;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox22
@@ -378,7 +380,6 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.label1.Size = new System.Drawing.Size(31, 34);
             this.label1.TabIndex = 25;
             this.label1.Text = "0";
-            
             // 
             // Level1
             // 
@@ -418,10 +419,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.Name = "Level1";
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
             this.LocationChanged += new System.EventHandler(this.Level1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level1_KeyDown);
-            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
