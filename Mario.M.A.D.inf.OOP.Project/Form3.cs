@@ -47,6 +47,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             pictureBox16.Location = new Point(1700, 70);
             pictureBox24.Location = new Point(1500, 5);
             label1.Location = new Point(1560, 11);
+            pictureBox18.Location = new Point(685, 628);
+            pictureBox19.Location = new Point(840, 74);
+            pictureBox20.Location = new Point(1190, 373);
         }
 
         private void button1_Click(object sender, EventArgs e)
