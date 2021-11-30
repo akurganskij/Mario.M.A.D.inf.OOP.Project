@@ -113,7 +113,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(326, 244);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(156, 46);
+            this.pictureBox3.Size = new System.Drawing.Size(246, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
@@ -190,7 +190,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(382, 300);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(156, 46);
+            this.pictureBox10.Size = new System.Drawing.Size(84, 46);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 19;
             this.pictureBox10.TabStop = false;

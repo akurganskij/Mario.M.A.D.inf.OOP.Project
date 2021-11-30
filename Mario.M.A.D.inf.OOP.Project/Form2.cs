@@ -30,17 +30,17 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void Level2_Load(object sender, EventArgs e)
         {
-            pictureBox2.Location = new Point(100, 700);
-            pictureBox3.Location = new Point(300, 500);
-            pictureBox4.Location = new Point(50, 250);
-            pictureBox5.Location = new Point(550, 320);
+            pictureBox2.Location = new Point(100, 720);
+            pictureBox3.Location = new Point(450, 570);
+            pictureBox4.Location = new Point(50, 350);
+            pictureBox5.Location = new Point(550, 420);
             pictureBox6.Location = new Point(350, 870);
             pictureBox7.Location = new Point(920, 650);
-            pictureBox8.Location = new Point(850, 200);
+            pictureBox8.Location = new Point(850, 270);
             pictureBox9.Location = new Point(1350, 400);
             pictureBox10.Location = new Point(1350, 750);
-            pictureBox11.Location = new Point(50, 190);
-            pictureBox12.Location = new Point(885, 140);
+            pictureBox11.Location = new Point(50, 220);
+            pictureBox12.Location = new Point(885, 170);
             pictureBox21.Location = new Point(1375, 690);
             pictureBox18.Location = new Point(940, 495);
             pictureBox24.Location = new Point(1500, 5);
