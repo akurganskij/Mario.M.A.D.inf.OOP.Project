@@ -59,10 +59,12 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.pictureBox1.Size = new System.Drawing.Size(1480, 720);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("French Script MT", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(55, 263);
             this.button2.Name = "button2";
@@ -74,9 +76,11 @@ namespace Mario.M.A.D.inf.OOP.Project
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("French Script MT", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.Location = new System.Drawing.Point(55, 316);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 29);

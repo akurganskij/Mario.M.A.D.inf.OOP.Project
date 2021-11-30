@@ -39,6 +39,11 @@ namespace Mario.M.A.D.inf.OOP.Project
             button2.Width = 120;
             button2.Height = 840;
 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -120,6 +125,11 @@ namespace Mario.M.A.D.inf.OOP.Project
                         break;
                     }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
