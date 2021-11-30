@@ -38,7 +38,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.OliveDrab;
+            this.button1.BackColor = System.Drawing.Color.Cornsilk;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Leelawadee UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(340, 235);
             this.button1.MaximumSize = new System.Drawing.Size(400, 200);
@@ -72,7 +73,8 @@ namespace Mario.M.A.D.inf.OOP.Project
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.OliveDrab;
+            this.button3.BackColor = System.Drawing.Color.Cornsilk;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Leelawadee UI Semilight", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(340, 147);
             this.button3.MaximumSize = new System.Drawing.Size(400, 200);

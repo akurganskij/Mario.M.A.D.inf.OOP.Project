@@ -39,6 +39,11 @@ namespace Mario.M.A.D.inf.OOP.Project
         {
             button1.Location = new Point(750, 600);
             button3.Location = new Point(750, 450);
+
+            button1.FlatAppearance.BorderSize = 0; 
+            button1.FlatStyle = FlatStyle.Flat;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
