@@ -11,16 +11,29 @@ namespace Mario.M.A.D.inf.OOP.Project
     public partial class Levels : Form
     {
         int imagenum = 0;
-        Form welcomeform = new Form();
-        public Levels(Form frm)
+        public Form1 welcomeform = new Form1();
+        public Levels(Form1 frm)
         {
             InitializeComponent();
             welcomeform = frm;
+            LoadAsyncSound();
+            welcomeform.player.PlayLooping();
         }
-
+        public void LoadAsyncSound()
+        {
+            try
+            {
+                welcomeform.player.SoundLocation = @"C:\Users\Andrey Kurganskij\Desktop\ProjectOOP\music3.wav";
+                welcomeform.player.LoadAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error loading sound");
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            Level1 level1 = new Level1(this);
+            Level1 level1 = new Level1(this, welcomeform);
             level1.Show(this);
             this.Hide();
         }
@@ -52,28 +65,27 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Level2 level2 = new Level2(this);
+            Level2 level2 = new Level2(this, welcomeform);
             level2.Show();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form3 level3 = new Form3(this);
+            Form3 level3 = new Form3(this, welcomeform);
             level3.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form1 level3 = new Form1();
-            level3.Show();
-            this.Hide();
+            welcomeform.Show();
+            this.Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Level1 level3 = new Level1(this);
+            Level1 level3 = new Level1(this,welcomeform);
             level3.Show();
             this.Hide();
         }
@@ -84,9 +96,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             imagenum %= 3;
             switch(imagenum)
             {
-                case 0: pictureBox1.BackgroundImage = Properties.Resources.lvl11; break;
-                case 1: pictureBox1.BackgroundImage = Properties.Resources.lvl21; break;
-                case 2: pictureBox1.BackgroundImage = Properties.Resources.lvl31; break;
+                case 0: pictureBox1.BackgroundImage = Properties.Resources.lvl12; break;
+                case 1: pictureBox1.BackgroundImage = Properties.Resources.lvl22; break;
+                case 2: pictureBox1.BackgroundImage = Properties.Resources.lvl32; break;
             }
             
         }
@@ -98,9 +110,9 @@ namespace Mario.M.A.D.inf.OOP.Project
             imagenum %= 3;
             switch (imagenum)
             {
-                case 0: pictureBox1.BackgroundImage = Properties.Resources.lvl11; break;
-                case 1: pictureBox1.BackgroundImage = Properties.Resources.lvl21; break;
-                case 2: pictureBox1.BackgroundImage = Properties.Resources.lvl31; break;
+                case 0: pictureBox1.BackgroundImage = Properties.Resources.lvl12; break;
+                case 1: pictureBox1.BackgroundImage = Properties.Resources.lvl22; break;
+                case 2: pictureBox1.BackgroundImage = Properties.Resources.lvl32; break;
             }
         }
 
@@ -109,21 +121,21 @@ namespace Mario.M.A.D.inf.OOP.Project
             switch (imagenum)
             {
                 case 0: { 
-                        Level1 lvl1 = new Level1(this);
+                        Level1 lvl1 = new Level1(this, welcomeform);
                         lvl1.Show();
                         this.Hide();
                         break; 
                     }
                 case 1:
                     {
-                        Level2 lvl2 = new Level2(this);
+                        Level2 lvl2 = new Level2(this, welcomeform);
                         lvl2.Show();
                         this.Hide();
                         break;
                     }
                 case 2:
                     {
-                        Form3 lvl3 = new Form3(this);
+                        Form3 lvl3 = new Form3(this, welcomeform);
                         lvl3.Show();
                         this.Hide();
                         break;
@@ -131,6 +143,15 @@ namespace Mario.M.A.D.inf.OOP.Project
             }
         }
 
-       
+        private void button4_VisibleChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Levels_Activated(object sender, EventArgs e)
+        {
+
+            LoadAsyncSound();
+            welcomeform.player.PlayLooping();
+        }
     }
 }

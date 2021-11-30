@@ -350,6 +350,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.Name = "Level2";
             this.Text = "Level2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Level2_Activated);
             this.Load += new System.EventHandler(this.Level2_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level2_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

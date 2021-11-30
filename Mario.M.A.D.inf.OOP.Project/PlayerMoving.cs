@@ -89,7 +89,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             PictureBox b = findUp();
             if (!jumped)
             {
-                timer.Interval = 1200;
+                timer.Interval = 1500;
                 jumped = true;
                 if (hero.Top - jumpheight < 0)
                 {

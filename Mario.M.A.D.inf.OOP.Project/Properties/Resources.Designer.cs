@@ -113,6 +113,16 @@ namespace Mario.M.A.D.inf.OOP.Project.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lvl12 {
+            get {
+                object obj = ResourceManager.GetObject("lvl12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lvl2 {
             get {
                 object obj = ResourceManager.GetObject("lvl2", resourceCulture);
@@ -133,6 +143,16 @@ namespace Mario.M.A.D.inf.OOP.Project.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lvl22 {
+            get {
+                object obj = ResourceManager.GetObject("lvl22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lvl3 {
             get {
                 object obj = ResourceManager.GetObject("lvl3", resourceCulture);
@@ -146,6 +166,16 @@ namespace Mario.M.A.D.inf.OOP.Project.Properties {
         internal static System.Drawing.Bitmap lvl31 {
             get {
                 object obj = ResourceManager.GetObject("lvl31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lvl32 {
+            get {
+                object obj = ResourceManager.GetObject("lvl32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

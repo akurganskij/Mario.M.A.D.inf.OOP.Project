@@ -47,19 +47,19 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.button4.TabIndex = 3;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.VisibleChanged += new System.EventHandler(this.button4_VisibleChanged);
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DarkKhaki;
-            this.pictureBox1.BackgroundImage = global::Mario.M.A.D.inf.OOP.Project.Properties.Resources.lvl11;
+            this.pictureBox1.BackgroundImage = global::Mario.M.A.D.inf.OOP.Project.Properties.Resources.lvl12;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(73, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1480, 720);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            
             // 
             // button2
             // 
@@ -116,6 +116,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             this.Name = "Levels";
             this.Text = "Levels";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Levels_Activated);
             this.Load += new System.EventHandler(this.Levels_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

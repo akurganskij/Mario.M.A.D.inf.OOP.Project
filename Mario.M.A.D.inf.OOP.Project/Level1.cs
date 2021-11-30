@@ -11,17 +11,33 @@ namespace Mario.M.A.D.inf.OOP.Project
     public partial class Level1 : Form
     {
         Form levelsform = new Form();
+        Form1 welcome = new Form1();
         PlayerMoving playerMoving;
         PictureBox[] coordinates, coins, monsters;
 
-        public Level1(Form frm)
+        public Level1(Form frm, Form1 frm2)
         {
             InitializeComponent();
             levelsform = frm;
+            welcome = frm2;
             coordinates = new PictureBox[15] { pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17 };
             coins = new PictureBox[3] { pictureBox19, pictureBox20, pictureBox21 };
             monsters = new PictureBox[2] {pictureBox22, pictureBox23 };
             playerMoving = new PlayerMoving(pictureBox2, timer1, 10, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width, pictureBox18, coins, monsters, complete);
+            LoadAsyncSound();
+            welcome.player.PlayLooping();
+        }
+        public void LoadAsyncSound()
+        {
+            try
+            {
+                welcome.player.SoundLocation = @"C:\Users\Andrey Kurganskij\Desktop\ProjectOOP\music1.wav";
+                welcome.player.LoadAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error loading sound");
+            }
         }
 
         private void complete()
@@ -84,9 +100,8 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 level3 = new Form1();
-            level3.Show();
-            this.Hide();
+            levelsform.Show();
+            this.Close();
         }
     }
 }

@@ -11,16 +11,32 @@ namespace Mario.M.A.D.inf.OOP.Project
     public partial class Form3 : Form
     {
         Form lastForm;
+        Form1 welcome = new Form1();
         PlayerMoving playerMoving;
         PictureBox[] coordinates, coins, monsters;
-        public Form3(Form frm)
+        public Form3(Form frm, Form1 frm1)
         {
             InitializeComponent();
             lastForm = frm;
+            welcome = frm1;
             coordinates = new PictureBox[11] { pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12};
             coins = new PictureBox[3] { pictureBox13, pictureBox14, pictureBox15 };
-            monsters = new PictureBox[0] { };
+            monsters = new PictureBox[3] { pictureBox18, pictureBox19, pictureBox20};
             playerMoving = new PlayerMoving(pictureBox17, timer1, 10, 150, coordinates, pictureBox1, Screen.PrimaryScreen.Bounds.Width, pictureBox16, coins, monsters, complete);
+            LoadAsyncSound();
+            welcome.player.PlayLooping();
+        }
+        public void LoadAsyncSound()
+        {
+            try
+            {
+                welcome.player.SoundLocation = @"C:\Users\Andrey Kurganskij\Desktop\ProjectOOP\music1.wav";
+                welcome.player.LoadAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error loading sound");
+            }
         }
         private void complete()
         {
@@ -54,9 +70,8 @@ namespace Mario.M.A.D.inf.OOP.Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 level3 = new Form1();
-            level3.Show();
-            this.Hide();
+            lastForm.Show();
+            this.Close();
         }
 
         private void Form3_KeyDown(object sender, KeyEventArgs e)

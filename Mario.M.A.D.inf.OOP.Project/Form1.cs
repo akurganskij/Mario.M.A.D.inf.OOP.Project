@@ -13,11 +13,13 @@ namespace Mario.M.A.D.inf.OOP.Project
 {
     public partial class Form1 : Form
     {
-        private SoundPlayer player = new SoundPlayer();
+        bool sound = true;
+        public SoundPlayer player = new SoundPlayer();
         public Form1()
         {
             InitializeComponent();
             this.player.LoadCompleted += new AsyncCompletedEventHandler(player_LoadCompleted);
+            
         }
         
 
@@ -27,7 +29,16 @@ namespace Mario.M.A.D.inf.OOP.Project
             {
                 try
                 {
-                    this.player.Play();
+                    if (!sound)
+                    {
+                        this.player.PlayLooping();
+                        sound = true;
+                    }
+                    else
+                    {
+                        this.player.Stop();
+                        sound = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -44,6 +55,7 @@ namespace Mario.M.A.D.inf.OOP.Project
             button1.FlatStyle = FlatStyle.Flat;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
+
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -79,6 +91,13 @@ namespace Mario.M.A.D.inf.OOP.Project
             {
                 MessageBox.Show(ex.Message, "Error loading sound");
             }
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+
+            LoadAsyncSound();
+            this.player.PlayLooping();
         }
     }
 }
